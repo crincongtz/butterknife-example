@@ -28,4 +28,18 @@
         android:text="OK"
         />
 
+    <Button
+        android:id="@+id/botonA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Boton A"
+        />
+
+    <Button
+        android:id="@+id/botonB"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Boton B"
+        />
+
 </LinearLayout>

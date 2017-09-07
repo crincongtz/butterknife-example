@@ -2,7 +2,9 @@ package com.crincongtz.ejemplobutterknife;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,10 +18,24 @@ public class MainActivity extends AppCompatActivity {
 
     @BindView(R.id.textB) TextView textViewB;
     @BindView(R.id.boton) Button boton;
+    @BindView(R.id.botonA) Button botonA;
+    @BindView(R.id.botonB) Button botonB;
 
-    @OnClick(R.id.boton)
-    public void clicked(){
-        Toast.makeText(this, "Click with ButterKnife", Toast.LENGTH_SHORT).show();
+    @OnClick({R.id.boton, R.id.botonA, R.id.botonB})
+    public void clicked(View view){
+        switch (view.getId()){
+            case R.id.boton:
+                Toast.makeText(this, "Click boton", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.botonA:
+                Toast.makeText(this, "Click boton A", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.botonB:
+                Toast.makeText(this, "Click boton B", Toast.LENGTH_SHORT).show();
+                break;
+        }
+//        Toast.makeText(this, "Click: " + view.getId(), Toast.LENGTH_SHORT).show();
+//        textViewB.setText("Texto ButterKnife");
     }
 
 
